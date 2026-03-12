@@ -1,0 +1,97 @@
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Search bar row + main content row */
+  grid-template-columns: 1fr; /* Single column for the whole app */
+  gap: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: 'Roboto', sans-serif;
+
+  max-width: 1400px;                /* larger max width */
+  width: min(95%, 1400px);          /* responsive */
+  min-height: 85vh;                 /* taller - almost full viewport */
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Search bar on top */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+/* Main content: two columns */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Left: CurrentWeather | Right: Chart + Forecast */
+  gap: 20px;
+}
+
+/* Left column */
+.current-weather {
+  background: #E5EBFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Right column */
+.right-column {
+  display: grid;
+  grid-template-rows: auto auto; /* Chart on top, Forecast below */
+  gap: 20px;
+}
+
+.temperature-chart {
+  display: flex;
+  justify-content: center;
+  background: #E5EBFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  align-items: center;
+}
+
+.forecast {
+  background: #E5EBFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  /* optional: limit width so long errors wrap instead of pushing layout */
+  max-width: 40ch;
+}
+
+.status {
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.status--loading {
+  background: rgba(230,245,255,0.98);
+  color: #025a9a;
+}
+
+.status--error {
+  background: rgba(255,235,235,0.98);
+  color: #9b1b1b;
+  border: 1px solid rgba(255,200,200,0.9);
+}
